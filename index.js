@@ -14,7 +14,7 @@ app.set("view engine", "ejs");
 
 app.use(express.static(path.join(__dirname, "/public")));
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // GET, POST, PATCH, DELETE
 
@@ -73,6 +73,6 @@ app.get("/search", (req, res) => {
 });
 
 //Assigning Port to our application
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log("Server is running on port " + PORT);
 });
